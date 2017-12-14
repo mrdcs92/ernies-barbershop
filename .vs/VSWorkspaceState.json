@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\css",
+    "\\js",
+    "\\js\\controllers",
+    "\\js\\factory",
+    "\\views"
   ],
+  "SelectedNode": "\\views\\authView.html",
   "PreviewInSolutionExplorer": false
 }

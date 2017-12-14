@@ -1,0 +1,14 @@
+﻿<div class="container auth-container">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div id="errorMessage" class="errorMessage alert alert-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
+            <form class="form-signin" name="authForm" role="form" ng-submit="vm.signIn()">
+                <input type="email" ng-model="vm.authEmail" class="form-control" placeholder="Email address" required autofocus="">
+                <input type="password" ng-model="vm.authPass" class="form-control" placeholder="Password" required>
+                <button class="btn btn-lg btn-primary btn-block" ng-disabled="vm.alreadySigned" type="submit">Login</button>
+            </form>
+            <button class="btn btn-lg btn-primary btn-block" ng-disabled="!vm.alreadySigned" ng-click="vm.signOut()">Logout</button>
+            <a class="btn btn-lg btn-primary" href="#!/edit" ng-show="vm.alreadySigned">Add/Edit Blog Entries</a>
+        </div>
+    </div>
+</div>
