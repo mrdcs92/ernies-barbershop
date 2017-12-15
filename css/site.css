@@ -1,1 +1,148 @@
 /* site.css */
+
+html, body {
+    height: 100%;
+}
+
+.jumbo {
+    background: url(barberSetting2.jpg);
+    background-size: cover;
+    width: auto;
+    min-height: calc(100vh - 56px);
+    position: relative;    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+.auth-container {
+    margin-top: 8rem;
+}
+
+.edit-container {
+    margin-top: 30px;
+}
+
+.errorMessage {
+    margin-top: 10px;
+}
+
+.successMessage {
+    margin-top: 10px;
+}
+
+form.form-signin > input, button {
+    margin-top: 10px;
+}
+
+.close {
+    margin: 0;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.card-subtitle {
+    margin-bottom: 15px;
+}
+
+textarea { 
+    box-sizing: padding-box;
+    overflow: hidden;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+button {
+    margin-top: 0;
+    cursor: pointer;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid rgba(0,0,0,.5);
+}
+
+.btm-margin {
+    margin-bottom: 1rem;
+}
+
+.button-margin {
+    margin-right: 4px;
+}
+
+.postCard:hover {
+    border: solid;
+    border-radius: .25rem;
+    border-color: #66afe9;
+    cursor: pointer;
+}
+
+.view.ng-leave {
+    -webkit-animation-name: fadeOutUp;
+    -moz-animation-name: fadeOutUp;
+    -ms-animation-name: fadeOutUp;
+    -o-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -ms-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.view.ng-enter {
+    -webkit-animation-name: fadeInDown;
+    -moz-animation-name: fadeInDown;
+    -ms-animation-name: fadeInDown;
+    -o-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -ms-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-timing-function: ease;
+    -moz-animation-timing-function: ease;
+    -ms-animation-timing-function: ease;
+    -o-animation-timing-function: ease;
+    animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
