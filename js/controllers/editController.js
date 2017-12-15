@@ -5,52 +5,79 @@
     "use strict";
 
     angular.module("app")
-        .controller("editController", ["$firebase", "$firebaseArray", editController]);
+        .controller("editController", ["$timeout", "$firebase", "$firebaseArray",  editController]);
 
-    function editController($firebase, $firebaseArray) {
+    function editController($timeout, $firebase, $firebaseArray) {
 
         var vm = this;
+        vm.errorMessage = "";
+        vm.successMessage = "";
         vm.newPost = {};
+
         var postsRef = firebase.database().ref().child("posts");
-
-        // FIX TO MAKE SURE IT SHOW MOST RECENT POST AT TOP.
         postsRef = postsRef.orderByChild("timestamp");
-        //vm.blogPosts = postsRef;
-        //console.log(postsRef);
-        var notOrdered = $firebaseArray(postsRef);
-        //var ordered = $firebaseArray(query);
-        console.log(notOrdered);
-        //console.log(ordered);
-        //var testArray = vm.blogPosts.reverse();
-        //console.log(testArray);
         vm.blogPosts = $firebaseArray(postsRef);
-        vm.blogPosts = vm.blogPosts.reverse();
-
 
         vm.addPost = function () {
-            console.log("this should only hit when the form is valid");
             vm.newPost.postDate = formatDate();
-            
-
             vm.newPost.shortMsg = formatMessage(vm.newPost.postMessage);
+            vm.newPost.$id = "";
+            vm.newPost.postTitle = vm.tempTitle;
             vm.newPost.timestamp = firebase.database.ServerValue.TIMESTAMP;
-            console.log(vm.newPost);
 
             vm.blogPosts.$add(vm.newPost).then(function (ref) {
                 var id = ref.key;
-                //console.log("added record with id " + id);
-                console.log("this is the index for that most recent one");
-                console.log(vm.blogPosts.$indexFor(id));
-                //console.log(vm.blogPosts[vm.blogPosts.$indexFor(id)]);
-                console.log("This is just the timestamp:");
-                console.log(vm.blogPosts[vm.blogPosts.$indexFor(id)].timestamp);
                 vm.blogPosts[vm.blogPosts.$indexFor(id)].timestamp *= -1;
                 vm.blogPosts.$save(vm.blogPosts.$indexFor(id)).then(function (newRef) {
-                    console.log("did it work");
+                    vm.successMessage = "Blog post added!";
+                    $timeout(function () { vm.successMessage = ""; }, 4000);
+                }).catch(function (error) {
+                    vm.errorMessage = "Error saving blog post.";
+                    console.log(error);
+                    $timeout(function () { vm.errorMessage = ""; }, 4000);
                 });
-
-                vm.newPost = {};
+                vm.clearPost();
+            }).catch(function (error) {
+                vm.errorMessage = "Error saving blog post.";
+                console.log(error);
+                $timeout(function () { vm.errorMessage = ""; }, 4000);
             });
+        }
+
+        vm.updatePost = function () {
+            vm.newPost.postTitle = vm.tempTitle;
+            vm.newPost.shortMsg = formatMessage(vm.newPost.postMessage);
+            
+            vm.blogPosts.$save(vm.blogPosts.$indexFor(vm.newPost.$id)).then(function (newRef) {
+                vm.successMessage = "Blog post updated!";
+                $timeout(function () { vm.successMessage = ""; }, 4000);
+            }).catch(function (error) {
+                vm.errorMessage = "Error updating blog post.";
+                $timeout(function () { vm.errorMessage = ""; }, 4000);
+            });    
+            vm.clearPost();
+        }
+
+        vm.deletePost = function () {
+            vm.blogPosts.$remove(vm.blogPosts.$indexFor(vm.newPost.$id)).then(function (newRef) {
+                vm.successMessage = "Blog post deleted!";
+                $timeout(function () { vm.successMessage = ""; }, 4000);
+                //console.log(newRef);
+            }).catch(function (error) {
+                vm.errorMessage = "Error deleting blog post.";
+                timeout(function () { vm.errorMessage = ""; }, 4000);
+            });
+        }
+
+        vm.clearPost = function () {
+            vm.newPost = {};
+            vm.tempTitle = "";
+        }
+
+        vm.getPost = function (post) {
+            var tempPost = post.postTitle.toString();
+            vm.newPost = post;
+            vm.tempTitle = tempPost;
         }
 
         function formatDate() {
@@ -75,6 +102,7 @@
             }
             return message;
         }
+
     }
 
     // Applied globally on all textareas with the "autoExpand" class

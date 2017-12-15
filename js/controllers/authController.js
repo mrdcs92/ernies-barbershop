@@ -5,12 +5,13 @@
     "use strict";
 
     angular.module("app")
-        .controller("authController", ["$q", "$location", "$firebase", "$firebaseAuth", authController]);
+        .controller("authController", ["$q", "$timeout", "$location", "$firebase", "$firebaseAuth", authController]);
 
-    function authController($q, $location, $firebase, $firebaseAuth) {
+    function authController($q, $timeout, $location, $firebase, $firebaseAuth) {
 
         var vm = this;
         var auth = $firebaseAuth();
+        vm.errorMessage = "";
         vm.alreadySigned;
         
         vm.signIn = function () {
@@ -23,11 +24,14 @@
                         })
                         .catch(function (error) {
                             vm.errorMessage = "Email or Password is incorrect.";
+                            $timeout(function () { vm.errorMessage = ""; }, 4000);
+                            
                         })
                     );
                 })
                 .catch(function (error) {
                     vm.errorMessage = "Email or Password is incorrect.";
+                    $timeout(function () { vm.errorMessage = ""; }, 4000);
                 });
             vm.getAuth();
         };

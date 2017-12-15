@@ -1,21 +1,22 @@
-<div class="container">
+<div class="container edit-container">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <div id="errorMessage" class="errorMessage alert alert-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
-            <form name="blogForm" ng-submit="vm.addPost()">
+            <div id="successMessage" class="successMessage alert alert-success" ng-show="vm.successMessage">{{vm.successMessage}}</div>
+            <form name="blogForm">
                 <div class="form-group">
-                    <label>Title</label>
-                    <input class="form-control" id="postTitle" name="postTitle" ng-model="vm.newPost.postTitle" required autofocus=""/>
+                    <label class="text-muted">Title</label>
+                    <input class="form-control" id="postTitle" name="postTitle" ng-model="vm.tempTitle" required autofocus=""/>
                 </div>
                 <div class="form-group">
-                    <label>Message</label>
+                    <label class="text-muted">Message</label>
                     <textarea class="form-control autoExpand" id="postMessage" name="postMessage" ng-model="vm.newPost.postMessage" rows="3" data-min-rows="3"  required />
                 </div>
                 <div>
-                    <input type="submit" value="Add" class="btn btn-success" />
-                    <button class="btn btn-info">Update</button>
-                    <button class="btn btn-danger float-right">Delete</button>
-                    <button class="btn btn-secondary float-right button-margin">Cancel</button>
+                    <button class="btn btn-success" ng-disabled="vm.newPost.$id || !vm.tempTitle || !vm.newPost.postMessage" ng-click="vm.addPost()">Add</button>
+                    <button class="btn btn-info" ng-disabled="!vm.newPost.$id" ng-click="vm.updatePost()">Update</button>
+                    <button class="btn btn-danger float-right" ng-disabled="!vm.newPost.$id" ng-click="vm.deletePost()">Delete</button>
+                    <button class="btn btn-secondary float-right button-margin" ng-disabled="!vm.newPost.postTitle && !vm.newPost.postMessage" ng-click="vm.clearPost()">Cancel</button>
                 </div>
             </form>
         </div>
@@ -25,8 +26,8 @@
 
     <div class="row">
         <div class="col-md-6" ng-repeat="post in vm.blogPosts">
-            <div class="card">
-                <div class="card-body">
+            <div ng-click="vm.getPost(post)" class="card">
+                <div class="card-body  postCard">
                     <h4 class="card-title">{{post.postTitle}}</h4>
                     <h6 class="card-subtitle bm-2 text-muted">{{post.postDate}}</h6>
                     <p class="card-text">{{post.shortMsg}}</p>
