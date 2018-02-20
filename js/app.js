@@ -34,6 +34,12 @@
             templateUrl: "/views/aboutView.html"
         });
 
+        $routeProvider.when("/bookings", {
+            controller: "homeController",
+            controllerAs: "vm",
+            templateUrl: "/views/bookView.html"
+        });
+
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
