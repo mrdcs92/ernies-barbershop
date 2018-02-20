@@ -66,7 +66,8 @@
             }).catch(function (error) {
                 vm.errorMessage = "Error deleting blog post.";
                 timeout(function () { vm.errorMessage = ""; }, 4000);
-            });
+                });
+            vm.clearPost();
         }
 
         vm.clearPost = function () {
