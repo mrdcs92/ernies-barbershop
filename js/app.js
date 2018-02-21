@@ -40,6 +40,12 @@
             templateUrl: "/views/bookView.html"
         });
 
+        $routeProvider.when("/blog", {
+            controller: "blogController",
+            controllerAs: "vm",
+            templateUrl: "/views/blogView.html"
+        });
+
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
