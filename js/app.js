@@ -5,58 +5,43 @@
     "use strict";
 
     var app = angular.module("app", ["ngRoute", "firebase"]);
-    //angular.module("app", ["ngRoute", "firebase"])
-
-    /*
-    app.run(["$rootScope", "$location", function ($rootScope, $location) {
-        $rootScope.$on("$routeChangeError", function (event, next, previous, error) {
-            // We can catch the error thrown when the $requireSignIn promise is rejected
-            // and redirect the user back to the home page
-            if (error === "AUTH_REQUIRED") {
-                $location.path("/");
-            }
-        });
-    }]);
-    */
-
-    // Problem with fetching templates
 
     app.config(function ($routeProvider) {
 
         $routeProvider.when("/", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/js/views/homeView.html"
+            templateUrl: "./views/homeView.html"
         });
 
         $routeProvider.when("/about", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/js/views/aboutView.html"
+            templateUrl: "./views/aboutView.html"
         });
 
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/js/views/bookView.html"
+            templateUrl: "./views/bookView.html"
         });
 
         $routeProvider.when("/blog", {
             controller: "blogController",
             controllerAs: "vm",
-            templateUrl: "/js/views/blogView.html"
+            templateUrl: "./views/blogView.html"
         });
 
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
-            templateUrl: "/js/views/authView.html"
+            templateUrl: "./views/authView.html"
         });
 
         $routeProvider.when("/edit", {
             controller: "editController",
             controllerAs: "vm",
-            templateUrl: "/js/views/editView.html",
+            templateUrl: "./views/editView.html",
             authenticated: true
         });
 
@@ -74,13 +59,6 @@
                         $location.path("/");
                     }
                 });
-
-                /*
-                var userAuth = authFactory.getAuth();
-                if (!userAuth) {
-                    $location.path("/");
-                }
-                */
             }
         });
     }])
