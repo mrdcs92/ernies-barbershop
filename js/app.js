@@ -25,7 +25,7 @@
         $routeProvider.when("/", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: ".../js/views/homeView.html"
+            templateUrl: "/js/views/homeView.html"
         });
 
         $routeProvider.when("/about", {
