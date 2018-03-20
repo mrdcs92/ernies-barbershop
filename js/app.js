@@ -19,6 +19,7 @@
     }]);
     */
 
+    // Problem with fetching templates
 
     app.config(function ($routeProvider) {
 
