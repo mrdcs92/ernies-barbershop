@@ -25,37 +25,37 @@
         $routeProvider.when("/", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/homeView.html"
+            templateUrl: "/views/homeView.html"
         });
 
         $routeProvider.when("/about", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/aboutView.html"
+            templateUrl: "/views/aboutView.html"
         });
 
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/bookView.html"
+            templateUrl: "/views/bookView.html"
         });
 
         $routeProvider.when("/blog", {
             controller: "blogController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/blogView.html"
+            templateUrl: "/views/blogView.html"
         });
 
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/authView.html"
+            templateUrl: "/views/authView.html"
         });
 
         $routeProvider.when("/edit", {
             controller: "editController",
             controllerAs: "vm",
-            templateUrl: "ernies-barbershop/js/views/editView.html",
+            templateUrl: "/views/editView.html",
             authenticated: true
         });
 
