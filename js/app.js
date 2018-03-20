@@ -31,25 +31,25 @@
         $routeProvider.when("/about", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/views/aboutView.html"
+            templateUrl: ".../views/aboutView.html"
         });
 
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/views/bookView.html"
+            templateUrl: "../views/bookView.html"
         });
 
         $routeProvider.when("/blog", {
             controller: "blogController",
             controllerAs: "vm",
-            templateUrl: "/views/blogView.html"
+            templateUrl: "./views/blogView.html"
         });
 
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
-            templateUrl: "/views/authView.html"
+            templateUrl: "/ernies-barbershop/views/authView.html"
         });
 
         $routeProvider.when("/edit", {
