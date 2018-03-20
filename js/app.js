@@ -25,19 +25,19 @@
         $routeProvider.when("/", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "/views/homeView.html"
+            templateUrl: "./views/homeView.html"
         });
 
         $routeProvider.when("/about", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: ".../views/aboutView.html"
+            templateUrl: "./views/aboutView.html"
         });
 
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
-            templateUrl: "../views/bookView.html"
+            templateUrl: "./views/bookView.html"
         });
 
         $routeProvider.when("/blog", {
@@ -49,13 +49,13 @@
         $routeProvider.when("/login", {
             controller: "authController",
             controllerAs: "vm",
-            templateUrl: "/ernies-barbershop/views/authView.html"
+            templateUrl: "./views/authView.html"
         });
 
         $routeProvider.when("/edit", {
             controller: "editController",
             controllerAs: "vm",
-            templateUrl: "/views/editView.html",
+            templateUrl: "./views/editView.html",
             authenticated: true
         });
 
