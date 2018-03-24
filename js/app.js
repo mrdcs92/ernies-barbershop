@@ -5,20 +5,6 @@
     "use strict";
 
     var app = angular.module("app", ["ngRoute", "firebase"]);
-    //angular.module("app", ["ngRoute", "firebase"])
-
-    /*
-    app.run(["$rootScope", "$location", function ($rootScope, $location) {
-        $rootScope.$on("$routeChangeError", function (event, next, previous, error) {
-            // We can catch the error thrown when the $requireSignIn promise is rejected
-            // and redirect the user back to the home page
-            if (error === "AUTH_REQUIRED") {
-                $location.path("/");
-            }
-        });
-    }]);
-    */
-
 
     app.config(function ($routeProvider) {
 
@@ -73,13 +59,6 @@
                         $location.path("/");
                     }
                 });
-
-                /*
-                var userAuth = authFactory.getAuth();
-                if (!userAuth) {
-                    $location.path("/");
-                }
-                */
             }
         });
     }])
