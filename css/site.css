@@ -9,10 +9,9 @@ html, body {
     background-size: cover;
     width: auto;
     min-height: calc(100vh - 56px);
-    position: relative;    
+    position: relative;
     background-position: center;
     background-repeat: no-repeat;
-    
 }
 
 .jumbotron {
@@ -71,7 +70,7 @@ form.form-signin > input, button {
     margin-bottom: 15px;
 }
 
-textarea { 
+textarea {
     box-sizing: padding-box;
     overflow: hidden;
 }
@@ -103,13 +102,13 @@ hr {
     overflow: hidden;
 }
 
-.postCard:hover {
-    border: solid;
-    border-radius: .25rem;
-    border-color: #66afe9;
-    cursor: pointer;
-    margin-bottom: -1px;
-}
+    .postCard:hover {
+        border: solid;
+        border-radius: .25rem;
+        border-color: #66afe9;
+        cursor: pointer;
+        margin-bottom: -1px;
+    }
 
 .view.ng-leave {
     -webkit-animation-name: fadeOutUp;
