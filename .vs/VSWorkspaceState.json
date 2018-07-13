@@ -3,9 +3,7 @@
     "",
     "\\css",
     "\\js",
-    "\\js\\controllers",
-    "\\js\\factory",
-    "\\views"
+    "\\js\\controllers"
   ],
   "SelectedNode": "\\js\\app.js",
   "PreviewInSolutionExplorer": false
