@@ -11,21 +11,25 @@
 
         var vm = this;
         var auth = $firebaseAuth();
+        vm.successMessage = "";
         vm.errorMessage = "";
         vm.alreadySigned;
-        
+
         vm.signIn = function () {
             // User stays logged in until window/tab is closed
             firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
                 .then(function () {
                     return (auth.$signInWithEmailAndPassword(vm.authEmail, vm.authPass)
                         .then(function () {
-                            $location.path("/edit");
+                            vm.successMessage = "Successfully signed in.";
+                            vm.authEmail = "";
+                            vm.authPass = "";
+                            $timeout(function () { vm.successMessage = ""; }, 4000);
+                            //$location.path("/edit");
                         })
                         .catch(function (error) {
                             vm.errorMessage = "Email or Password is incorrect.";
                             $timeout(function () { vm.errorMessage = ""; }, 4000);
-                            
                         })
                     );
                 })

@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app")
-        .controller("editController", ["$timeout", "$firebase", "$firebaseArray",  editController]);
+        .controller("editController", ["$timeout", "$firebase", "$firebaseArray", editController]);
 
     function editController($timeout, $firebase, $firebaseArray) {
 
@@ -47,14 +47,14 @@
         vm.updatePost = function () {
             vm.newPost.postTitle = vm.tempTitle;
             vm.newPost.shortMsg = formatMessage(vm.newPost.postMessage);
-            
+
             vm.blogPosts.$save(vm.blogPosts.$indexFor(vm.newPost.$id)).then(function (newRef) {
                 vm.successMessage = "Blog post updated!";
                 $timeout(function () { vm.successMessage = ""; }, 4000);
             }).catch(function (error) {
                 vm.errorMessage = "Error updating blog post.";
                 $timeout(function () { vm.errorMessage = ""; }, 4000);
-            });    
+            });
             vm.clearPost();
         }
 
@@ -66,7 +66,7 @@
             }).catch(function (error) {
                 vm.errorMessage = "Error deleting blog post.";
                 timeout(function () { vm.errorMessage = ""; }, 4000);
-                });
+            });
             vm.clearPost();
         }
 

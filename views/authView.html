@@ -1,6 +1,7 @@
 ﻿<div class="container auth-container">
     <div class="row">
         <div class="col-md-6 mx-auto">
+            <div id="successMessage" class="successMessage alert alert-success" ng-show="vm.successMessage">{{vm.successMessage}}</div>
             <div id="errorMessage" class="errorMessage alert alert-danger" ng-show="vm.errorMessage">{{vm.errorMessage}}</div>
             <form class="form-signin" name="authForm" role="form" ng-submit="vm.signIn()">
                 <div class="form-group">
@@ -12,7 +13,8 @@
                 <button class="btn btn-lg btn-primary btn-block btm-margin" ng-disabled="vm.alreadySigned" type="submit">Login</button>
             </form>
             <button class="btn btn-lg btn-secondary btn-block btm-margin" ng-disabled="!vm.alreadySigned" ng-click="vm.signOut()">Logout</button>
-            <a class="btn btn-lg btn-info btn-block" href="#!/edit" ng-show="vm.alreadySigned">Add/Edit Blog Entries</a>
+            <a class="btn btn-lg btn-info btn-block btm-margin" href="#!/edit" ng-show="vm.alreadySigned">Add/Edit Blog Entries</a>
+            <a class="btn btn-lg btn-info btn-block" href="#!/hours" ng-show="vm.alreadySigned">Add/Edit Open Hours</a>
         </div>
     </div>
 </div>

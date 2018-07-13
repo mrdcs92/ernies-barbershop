@@ -45,11 +45,18 @@
             authenticated: true
         });
 
+        $routeProvider.when("/hours", {
+            controller: "hoursController",
+            controllerAs: "vm",
+            templateUrl: "./views/hoursView.html",
+            authenticated: true
+        });
+
         $routeProvider.otherwise({ redirectTo: "/" });
 
     });
 
-    app.run(["$rootScope", "$location", "$firebase", "$firebaseAuth", function ($rootScope, $location, $firebase, $firebaseAuth,) {
+    app.run(["$rootScope", "$location", "$firebase", "$firebaseAuth", function ($rootScope, $location, $firebase, $firebaseAuth, ) {
         $rootScope.$on("$routeChangeStart", function (event, next, current) {
             // If route is authenticated, check if user is authenticated
             if (next.$$route.authenticated) {
