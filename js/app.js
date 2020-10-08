@@ -4,7 +4,7 @@
 
     "use strict";
 
-    var app = angular.module("app", ["ngRoute", "firebase"]);
+    var app = angular.module("app", ["ngRoute", "firebase", "angularUtils.directives.dirPagination"]);
 
     app.config(function ($routeProvider) {
 
