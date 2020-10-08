@@ -1,7 +1,7 @@
 <div class="container">
     <h1 class="text-center blog-header"><i class="fa fa-scissors" aria-hidden="true"></i> Ernie's Blog</h1>
     <div class="row">
-        <div class="col-md-9 mx-auto" dir-paginate="post in vm.blogPosts" current-page="vm.currentPage">
+        <div class="col-md-9 mx-auto" dir-paginate="post in vm.blogPosts | filter:'' | itemsPerPage: vm.pageSize" current-page="vm.currentPage">
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">{{post.postTitle}}</h4>
