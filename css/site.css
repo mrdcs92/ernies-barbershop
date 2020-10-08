@@ -79,7 +79,11 @@ label {
     font-size: 1.5rem;
 }
 
-#paginationSection > li {
+.pagination {
+    display: inline-flex;
+}
+
+.pagination > li {
     border: solid;
 }
 
