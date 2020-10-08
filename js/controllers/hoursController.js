@@ -5,7 +5,7 @@
     "use strict";
 
     angular.module("app")
-        .controller("hoursController", ["$timeout", "$firebase", "$firebaseArray", hoursContoller]);
+        .controller("hoursController", ["$timeout", "$firebase", "$firebaseArray", hoursController]);
 
     function hoursController($timeout, $firebase, $firebaseArray) {
 
