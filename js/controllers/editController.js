@@ -13,6 +13,8 @@
         vm.errorMessage = "";
         vm.successMessage = "";
         vm.newPost = {};
+        vm.currentPage = 1;
+        vm.pageSize = 6;
 
         var postsRef = firebase.database().ref().child("posts");
         postsRef = postsRef.orderByChild("timestamp");
@@ -80,6 +82,9 @@
             vm.newPost = post;
             vm.tempTitle = tempPost;
         }
+
+        vm.pageChangeHandler = function(num) {
+        };
 
         function formatDate() {
             var monthNames = [

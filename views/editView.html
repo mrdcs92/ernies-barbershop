@@ -25,7 +25,7 @@
     <hr />
 
     <div class="row">
-        <div class="col-md-6" ng-repeat="post in vm.blogPosts">
+        <div class="col-md-6" dir-paginate="post in vm.blogPosts | filter:'' | itemsPerPage: vm.pageSize" current-page="vm.currentPage">
             <div ng-click="vm.getPost(post)" class="card">
                 <div class="card-body  postCard">
                     <h4 class="card-title">{{post.postTitle}}</h4>
@@ -33,6 +33,11 @@
                     <p class="card-text">{{post.shortMsg}}</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="paginationSection" class="col-md-9 mx-auto text-center">
+            <dir-pagination-controls boundary-links="true" on-page-change="vm.pageChangeHandler(newPageNumber)"></dir-pagination-controls>
         </div>
     </div>
 
