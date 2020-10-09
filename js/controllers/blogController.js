@@ -18,7 +18,6 @@
         vm.blogPosts = $firebaseArray(postsRef);
 
         vm.pageChangeHandler = function(num) {
-            console.log('meals page changed to ' + num);
         };
 
     }
