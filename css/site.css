@@ -29,7 +29,7 @@ h1 {
 }
 
 #bookSection > h1 {
-    margin-bottom: 0;
+    margin-bottom: 0.2rem !important;
 }
 
 .auth-container {
