@@ -28,8 +28,8 @@ h1 {
     margin-bottom: 2rem;
 }
 
-#bookSection > h1 {
-    margin-bottom: 0.2rem !important;
+#bookText {
+    margin-bottom: 0.2rem;
 }
 
 .auth-container {
