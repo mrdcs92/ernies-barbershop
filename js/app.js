@@ -6,7 +6,8 @@
 
     var app = angular.module("app", ["ngRoute", "firebase", "angularUtils.directives.dirPagination"]);
 
-    app.config(function ($routeProvider) {
+    app.config(function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix('');
 
         $routeProvider.when("/", {
             controller: "homeController",
