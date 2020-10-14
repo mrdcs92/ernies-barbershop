@@ -24,7 +24,12 @@ h1 {
 }
 
 #bookSection {
-    margin-top: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+#bookSection > h1 {
+    margin-bottom: 0;
 }
 
 .auth-container {
