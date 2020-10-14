@@ -43,21 +43,3 @@
   </div>
 </div>
 
-<script>
-  // Initialize and add the map
-  function initMap() {
-    // The location of Ernies
-    var uluru = { lat: 34.153252, lng: -118.229316 };
-    // The map, centered at Ernies
-    var map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: uluru,
-    });
-    // The marker, positioned at Ernies
-    var marker = new google.maps.Marker({ position: uluru, map: map });
-  }
-</script>
-<script
-  defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4_AaxrU5PIZuUDkFVa7g-ecBadcMdJE&callback=initMap"
-></script>
