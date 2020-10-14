@@ -1,28 +1,63 @@
-﻿<div class="jumbotron jumbo">
-</div>
+﻿<div class="jumbotron jumbo"></div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-12" id="bookSection" align="center">
-            <a href="#/bookings" class="btn btn-outline-dark" role="button"><h1 id="bookText"><i class="fa fa-scissors" aria-hidden="true"></i> Book An Appointment</h1></a>
-        </div>
+  <div class="row">
+    <div class="col-md-12" id="bookSection" align="center">
+      <a href="#/bookings" class="btn btn-outline-dark" role="button"
+        ><h1 id="bookText">
+          <i class="fa fa-scissors" aria-hidden="true"></i> Book An Appointment
+        </h1></a
+      >
     </div>
-    <hr id="divider" />
-    <div class="row">
-        <div class="col-md-12">
-            <h1 id="home-blog-header" class="text-center">Blog Posts</h1>
-        </div>
+  </div>
+  <hr id="divider" />
+  <div class="row">
+    <div class="col-md-12">
+      <h1 id="home-blog-header" class="text-center">Location</h1>
     </div>
-    <div class="row" ng-repeat="post in vm.blogPosts">
-        <div class="col-md-8 mx-auto">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{{post.postTitle}}</h4>
-                    <h6 class="card-subtitle bm-2 text-muted">{{post.postDate}}</h6>
-                    <p class="card-text">{{post.postMessage}}</p>
-                </div>
-            </div>
-        </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <p>1584 E Chevy Chase Dr<br />Glendale, CA 91206</p>
     </div>
-
+    <div class="col-md-6 mx-auto">
+      <div id="map"></div>
+    </div>
+  </div>
+  <hr id="divider" />
+  <div class="row">
+    <div class="col-md-12">
+      <h1 id="home-blog-header" class="text-center">Blog Posts</h1>
+    </div>
+  </div>
+  <div class="row" ng-repeat="post in vm.blogPosts">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{post.postTitle}}</h4>
+          <h6 class="card-subtitle bm-2 text-muted">{{post.postDate}}</h6>
+          <p class="card-text">{{post.postMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  // Initialize and add the map
+  function initMap() {
+    // The location of Ernies
+    var uluru = { lat: 34.153252, lng: -118.229316 };
+    // The map, centered at Ernies
+    var map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 4,
+      center: uluru,
+    });
+    // The marker, positioned at Ernies
+    var marker = new google.maps.Marker({ position: uluru, map: map });
+  }
+</script>
+<script
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL4_AaxrU5PIZuUDkFVa7g-ecBadcMdJE&callback=initMap"
+></script>

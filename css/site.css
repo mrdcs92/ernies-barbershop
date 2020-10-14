@@ -32,6 +32,11 @@ h1 {
     margin-bottom: 0.2rem;
 }
 
+#map {
+    height: 400px;
+    width: auto;
+}
+
 .auth-container {
     margin-top: 8rem;
 }
