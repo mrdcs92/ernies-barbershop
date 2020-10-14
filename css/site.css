@@ -4,6 +4,10 @@ html, body {
     height: 100%;
 }
 
+h1 {
+    font-family: 'Nixie One', cursive;
+}
+
 .jumbo {
     background: url(../img/barberSetting2.jpg);
     background-size: cover;
@@ -17,6 +21,10 @@ html, body {
 .jumbotron {
     margin-bottom: 0;
     border-radius: 0;
+}
+
+#bookSection {
+    margin-top: 1rem;
 }
 
 .auth-container {
