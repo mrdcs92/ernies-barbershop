@@ -15,12 +15,6 @@
             templateUrl: "./views/homeView.html"
         });
 
-        $routeProvider.when("/about", {
-            controller: "homeController",
-            controllerAs: "vm",
-            templateUrl: "./views/aboutView.html"
-        });
-
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
@@ -43,13 +37,6 @@
             controller: "editController",
             controllerAs: "vm",
             templateUrl: "./views/editView.html",
-            authenticated: true
-        });
-
-        $routeProvider.when("/hours", {
-            controller: "hoursController",
-            controllerAs: "vm",
-            templateUrl: "./views/hoursView.html",
             authenticated: true
         });
 
