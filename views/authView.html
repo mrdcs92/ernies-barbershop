@@ -13,8 +13,7 @@
                 <button class="btn btn-lg btn-primary btn-block btm-margin" ng-disabled="vm.alreadySigned" type="submit">Login</button>
             </form>
             <button class="btn btn-lg btn-secondary btn-block btm-margin" ng-disabled="!vm.alreadySigned" ng-click="vm.signOut()">Logout</button>
-            <a class="btn btn-lg btn-info btn-block btm-margin" href="#!/edit" ng-show="vm.alreadySigned">Add/Edit Blog Entries</a>
-            <a class="btn btn-lg btn-info btn-block" href="#!/hours" ng-show="vm.alreadySigned">Add/Edit Open Hours</a>
+            <a class="btn btn-lg btn-info btn-block btm-margin" href="#/edit" ng-show="vm.alreadySigned">Add/Edit Blog Entries</a>
         </div>
     </div>
 </div>
