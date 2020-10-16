@@ -42,6 +42,12 @@ h1 {
     margin-bottom: auto;
 }
 
+#googleMap {
+    border: grey;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
 .auth-container {
     margin-top: 8rem;
 }
