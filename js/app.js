@@ -7,33 +7,31 @@
     var app = angular.module("app", ["ngRoute", "firebase", "angularUtils.directives.dirPagination"]);
 
     app.config(function ($routeProvider, $locationProvider) {
-        $locationProvider.hashPrefix('');
-
-        $routeProvider.when("/", {
+        $routeProvider.when("#", {
             controller: "homeController",
             controllerAs: "vm",
             templateUrl: "./views/homeView.html"
         });
 
-        $routeProvider.when("/bookings", {
+        $routeProvider.when("bookings", {
             controller: "homeController",
             controllerAs: "vm",
             templateUrl: "./views/bookView.html"
         });
 
-        $routeProvider.when("/blog", {
+        $routeProvider.when("blog", {
             controller: "blogController",
             controllerAs: "vm",
             templateUrl: "./views/blogView.html"
         });
 
-        $routeProvider.when("/login", {
+        $routeProvider.when("login", {
             controller: "authController",
             controllerAs: "vm",
             templateUrl: "./views/authView.html"
         });
 
-        $routeProvider.when("/edit", {
+        $routeProvider.when("edit", {
             controller: "editController",
             controllerAs: "vm",
             templateUrl: "./views/editView.html",
@@ -41,6 +39,7 @@
         });
 
         $routeProvider.otherwise({ redirectTo: "/" });
+        $locationProvider.html5Mode(true);
 
     });
 
@@ -51,7 +50,7 @@
                 var auth = $firebaseAuth();
                 auth.$onAuthStateChanged(function (firebaseUser) {
                     if (!firebaseUser) {
-                        $location.path("/");
+                        $location.path("#");
                     }
                 });
             }
