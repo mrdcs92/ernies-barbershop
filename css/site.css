@@ -26,8 +26,7 @@ h1 {
 
 .ernie-pics img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
 }
 
 #bookSection {
