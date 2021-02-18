@@ -40,6 +40,12 @@
             authenticated: true
         });
 
+        $routeProvider.when("/bookings/zachlind", {
+            controller: "homeController",
+            controllerAs: "vm",
+            templateUrl: "./views/book1.html"
+        });
+
         $routeProvider.otherwise({ redirectTo: "/" });
 
     });
