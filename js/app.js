@@ -40,12 +40,6 @@
             authenticated: true
         });
 
-        $routeProvider.when("/bookings/book1", {
-            controller: "homeController",
-            controllerAs: "vm",
-            templateUrl: "./views/book1.html"
-        });
-
         $routeProvider.when("/bookings/zachlind", {
             controller: "homeController",
             controllerAs: "vm",
