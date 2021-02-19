@@ -90,6 +90,10 @@ h1, h5 {
   margin-bottom: 1rem;
 }
 
+#bookdesc {
+  font-family: "Nixie One", cursive;
+}
+
 .errorMessage {
   margin-top: 10px;
 }
