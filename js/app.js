@@ -40,10 +40,22 @@
             authenticated: true
         });
 
-        $routeProvider.when("/bookings/zachlind", {
+        $routeProvider.when("/bookings/book1", {
             controller: "homeController",
             controllerAs: "vm",
             templateUrl: "./views/book1.html"
+        });
+
+        $routeProvider.when("/bookings/zachlind", {
+            controller: "homeController",
+            controllerAs: "vm",
+            templateUrl: "./views/zachlind.html"
+        });
+
+        $routeProvider.when("/bookings/gregcardona", {
+            controller: "homeController",
+            controllerAs: "vm",
+            templateUrl: "./views/gregcardona.html"
         });
 
         $routeProvider.otherwise({ redirectTo: "/" });
