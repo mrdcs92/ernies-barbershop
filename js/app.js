@@ -15,11 +15,13 @@
             templateUrl: "./views/homeView.html"
         });
 
+        /*
         $routeProvider.when("/bookings", {
             controller: "homeController",
             controllerAs: "vm",
             templateUrl: "./views/bookView.html"
         });
+        */
 
         $routeProvider.when("/blog", {
             controller: "blogController",
@@ -40,6 +42,7 @@
             authenticated: true
         });
 
+        /*
         $routeProvider.when("/bookings/zachlind", {
             controller: "homeController",
             controllerAs: "vm",
@@ -51,6 +54,7 @@
             controllerAs: "vm",
             templateUrl: "./views/gregcardona.html"
         });
+        */
 
         $routeProvider.otherwise({ redirectTo: "/" });
 
